@@ -1,0 +1,42 @@
+# 📁 Node / React
+frontend/node_modules/
+dist/
+.vite/
+.env.local
+
+# 🛠 Build frontend
+frontend/build/
+frontend/.cache/
+frontend/.DS_Store
+
+# 🐘 Symfony / PHP
+vendor/
+var/
+.env
+.env.*
+.phpunit.result.cache
+
+# Symfony IDE
+.idea/
+.phpunit.cache/
+.phpstorm.meta.php/
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+
+# 📦 Composer lock (optionnel si géré séparément)
+# composer.lock
+
+# Vite
+frontend/.vite/
+
+# 🔒 Certificats auto-signés ou secrets (si utilisés)
+certs/
+secrets/
