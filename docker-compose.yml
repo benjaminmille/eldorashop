@@ -7,7 +7,7 @@ services:
       - "80:80"
     volumes:
       - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./frontend/build:/var/www/frontend:ro
+      - ./frontend/dist:/var/www/frontend:ro
       - ./backend/public:/var/www/backend/public:ro
     depends_on:
       - php
@@ -31,6 +31,8 @@ services:
       MYSQL_DATABASE: eldorashop
       MYSQL_USER: eldorashop
       MYSQL_PASSWORD: eldorashop
+    ports:
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
     networks:
@@ -52,8 +54,8 @@ services:
     volumes:
       - ./frontend:/var/www/frontend
     ports:
-      - "5173:5173"  # pour Vite ou "3000:3000" pour create-react-app
-    command: ["sh", "-c", "npm install && npm run dev"]
+      - "5173:5173"
+    command: ["sh", "-c", "npm install && npm run dev --watch"]
     networks:
       - eldorashop
 
